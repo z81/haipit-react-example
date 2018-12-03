@@ -1,0 +1,95 @@
+@import "./variables";
+
+.post {
+    background: $post-background-color;
+    width: $post-width;
+    margin: $post-margin;
+    break-inside: avoid;
+
+
+    img {
+        border-radius: $post-image-border-radius;
+        padding-bottom: 0.3rem;
+        max-width: 100%;
+        min-width: $post-width / 3;
+        min-height: $post-width / 2;
+    }
+
+    a {
+        color: $post-link-color;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .header {
+        color: $post-header-color;
+        font-size: 1.2em;
+        padding: 1.2rem;
+        padding-bottom: 0;
+    }
+
+    .content {
+        color: $post-content-color;
+        padding: 1.2rem;
+        line-height: 1.32em;
+    }
+
+    .footer {
+        padding: 1rem;
+        padding-top: 0;
+        color: $post-footer-color;
+        display: flex;
+        flex-direction: column;
+
+        .footer-topline {
+            display: flex;
+            padding-bottom: 0.5em;
+
+            .source-name {
+                color: $post-source-name-color;
+                text-transform: capitalize;
+            }
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: flex-start;
+
+            .views,
+            .datetime {
+                display: flex;
+                align-items: center;
+                margin-right: 1.5rem;
+                font-size: 0.9em;
+
+                >svg {
+                    padding-right: 0.4rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .post {
+        width: 25rem;
+    }
+}
+
+@media (max-width: 1360px) {
+    .post {
+        width: 33rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .post {
+        width: 28rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .post {
+        width: 100%;
+    }
+}

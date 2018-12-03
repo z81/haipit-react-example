@@ -1,0 +1,28 @@
+.posts-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.posts {
+  column-count: 3;
+  break-inside: avoid;
+  overflow-x: hidden;
+
+  .post:first-child {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 1360px) {
+  .posts {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 1000px) {
+  .posts {
+    column-count: 1;
+    padding-right: 1rem;
+  }
+}

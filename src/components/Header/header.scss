@@ -1,0 +1,61 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 2.5rem;
+  background: #1a2133;
+  border-bottom: 1px solid #151927;
+  display: flex;
+  align-items: center;
+  color: #bdbdbd;
+  font-size: 1.5em;
+}
+
+.logo {
+  background-image: url('./logo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 7rem;
+  height: 2rem;
+  margin: 0.2rem;
+  margin-right: 0.4rem;
+  margin-left: 0.25rem;
+}
+
+.pages {
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  ul.pagination {
+    display: flex;
+    margin: 0;
+    list-style: none;
+
+    li {
+      background: #2d3138;
+      color: #c5c8d6;
+      text-align: center;
+      line-height: 2.5rem;
+      margin-right: 0.4rem;
+      user-select: none;
+      outline: none;
+      min-height: 2.5rem;
+      min-width: 2.5rem;
+
+      a {
+        min-height: 2.5rem;
+        min-width: 2.5rem;
+        display: inline-block;
+      }
+    }
+
+    li.active {
+      background: #5576b1;
+    }
+
+    li.disabled {
+      color: darken(#2d3138, 5);
+    }
+  }
+}
