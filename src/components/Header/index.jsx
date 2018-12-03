@@ -9,6 +9,7 @@ class HeaderComponent extends Component {
 
   render() {
     const { routeParams, lastPage } = this.props;
+    const pageId = routeParams.id ? routeParams.id : 1;
 
     return (
       <div className="main-header">
@@ -21,7 +22,7 @@ class HeaderComponent extends Component {
             breakLabel={"..."}
             breakClassName={"break-me"}
             pageCount={lastPage}
-            initialPage={routeParams.id - 1}
+            initialPage={pageId - 1}
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={this.goToPage}
