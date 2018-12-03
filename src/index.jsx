@@ -27,8 +27,7 @@ if (node) {
     <Provider store={store}>
       <Router>
         <div>
-          <Route path="/page/:id" component={App} />
-          <Route exact path="/" component={App} />
+          <Route path={["/page/:id", "/"]} component={App} />
         </div>
       </Router>
     </Provider>,
