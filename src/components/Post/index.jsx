@@ -6,7 +6,24 @@ import { FaEye, FaCalendarTimes } from "react-icons/fa";
 import "./post.scss";
 import { PostLoader } from "./PostLoader";
 
-export class Post extends Component {
+type Props = {
+  isLoading: boolean,
+  title: string,
+  description: string,
+  timestamp: number,
+  clicks_count: number,
+  source: {
+    link: string,
+    title: string
+  },
+  link: string
+};
+
+type State = {
+  count: number
+};
+
+export class Post extends Component<Props, State> {
   render() {
     const {
       isLoading,
@@ -34,7 +51,11 @@ export class Post extends Component {
           </a>
         </div>
         <div className="content">
-          <div dangerouslySetInnerHTML={{ __html: description }} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: description
+            }}
+          />
         </div>
         <div className="footer">
           <div className="footer-bottom">

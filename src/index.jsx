@@ -1,4 +1,4 @@
-// @flow
+/* @flow */
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -20,20 +20,16 @@ const store = createStore(
   )
 );
 
-const node = document.getElementById("root");
-
-if (node) {
-  ReactDOM.render(
-    <Provider store={store}>
-      <Router>
-        <div>
-          <Route path={["/page/:id", "/"]} component={App} />
-        </div>
-      </Router>
-    </Provider>,
-    node
-  );
-}
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route path={["/page/:id", "/"]} component={App} />
+      </div>
+    </Router>
+  </Provider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

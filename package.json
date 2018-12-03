@@ -12,7 +12,6 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
-    "flow-bin": "^0.87.0",
     "luxon": "^1.8.2",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
@@ -44,6 +43,7 @@
   ],
   "devDependencies": {
     "@types/redux-devtools": "^3.0.44",
+    "flow-bin": "^0.87.0",
     "redux-devtools": "^3.4.2"
   }
 }

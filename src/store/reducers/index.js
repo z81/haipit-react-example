@@ -2,6 +2,10 @@
 
 import * as types from '../actionTypes';
 
+declare interface initialState {
+    posts: mixed[];
+    currentPage: number;
+}
 
 const loadingPosts = [1, 2, 3, 4, 5, 6].map(id => ({
     id,

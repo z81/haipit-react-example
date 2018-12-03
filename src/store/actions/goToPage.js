@@ -2,7 +2,8 @@
 
 import * as types from '../actionTypes';
 
-export function goToPage(page) {
+
+export function goToPage(page: number) {
     return async (dispatch, getState, {
         API_PATH
     }) => {

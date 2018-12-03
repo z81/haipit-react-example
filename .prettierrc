@@ -1,6 +1,1 @@
-{
-  "max-len": [2, {
-    "code": 120,
-    "ignorePattern": "^import\\W.*"
-  }]
-}
+{}
