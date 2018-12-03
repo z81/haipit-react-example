@@ -11,7 +11,7 @@
         border-radius: $post-image-border-radius;
         padding-bottom: 0.3rem;
         max-width: 100%;
-        min-width: $post-width / 3;
+        min-width: $post-width - $post-margin * 2.2;
         min-height: $post-width / 2;
     }
 
