@@ -9,25 +9,31 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import reducers from "./store/reducers";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const store = createStore(
-    reducers,
-    applyMiddleware(
-        thunk.withExtraArgument({
-            API_PATH: "https://api.haipit.news/api/v2/"
-        })
-    )
+  reducers,
+  applyMiddleware(
+    thunk.withExtraArgument({
+      API_PATH: "https://api.haipit.news/api/v2/"
+    })
+  )
 );
 
 const node = document.getElementById("root");
 
 if (node) {
-    ReactDOM.render(
-        <Provider store={store}>
-            <App />
-        </Provider>,
-        node
-    );
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router>
+        <div>
+          <Route path="/page/:id" component={App} />
+          <Route exact path="/" component={App} />
+        </div>
+      </Router>
+    </Provider>,
+    node
+  );
 }
 
 // If you want your app to work offline and load faster, you can change

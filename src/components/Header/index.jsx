@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import ReactPaginate from "react-paginate";
+import { withRouter } from "react-router-dom";
 import "./header.scss";
 import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
 
-export class Header extends Component {
-  goToPage = ({ selected }) => this.props.goToPage(selected + 1);
+class HeaderComponent extends Component {
+  goToPage = ({ selected }) => this.props.history.push(`/page/${selected + 1}`);
 
   render() {
-    const { currentPage, lastPage } = this.props;
+    const { routeParams, lastPage } = this.props;
 
     return (
       <div className="main-header">
@@ -20,7 +21,7 @@ export class Header extends Component {
             breakLabel={"..."}
             breakClassName={"break-me"}
             pageCount={lastPage}
-            initialPage={currentPage - 1}
+            initialPage={routeParams.id - 1}
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={this.goToPage}
@@ -33,3 +34,5 @@ export class Header extends Component {
     );
   }
 }
+
+export const Header = withRouter(HeaderComponent);

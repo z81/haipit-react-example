@@ -9,8 +9,8 @@ export class App extends Component {
   render() {
     return (
       <div className="app">
-        <HeaderLink />
-        <PostsLink />
+        <HeaderLink routeParams={this.props.match.params} />
+        <PostsLink routeParams={this.props.match.params} />
       </div>
     );
   }
