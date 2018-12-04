@@ -12,10 +12,10 @@ class HeaderComponent extends Component {
     const pageId = routeParams.id ? routeParams.id : 1;
 
     return (
-      <div className="main-header">
+      <header className="main-header">
         <div className="logo" />
         <div>Новости</div>
-        <div className="pages">
+        <nav className="pages">
           <ReactPaginate
             previousLabel={<FaLongArrowAltLeft size={16} />}
             nextLabel={<FaLongArrowAltRight size={16} />}
@@ -30,8 +30,8 @@ class HeaderComponent extends Component {
             subContainerClassName={"pages pagination"}
             activeClassName={"active"}
           />
-        </div>
-      </div>
+        </nav>
+      </header>
     );
   }
 }

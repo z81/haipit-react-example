@@ -8,10 +8,12 @@ import { HeaderLink } from "./containers/HeaderLink";
 export class App extends Component {
   render() {
     return (
-      <div className="app">
-        <HeaderLink routeParams={this.props.match.params} />
-        <PostsLink routeParams={this.props.match.params} />
-      </div>
+      <main className="app">
+        <section>
+          <HeaderLink routeParams={this.props.match.params} />
+          <PostsLink routeParams={this.props.match.params} />
+        </section>
+      </main>
     );
   }
 }

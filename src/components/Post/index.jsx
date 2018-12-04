@@ -44,7 +44,7 @@ export class Post extends Component<Props, State> {
     );
 
     return (
-      <div className="post">
+      <aside className="post">
         <div className="header">
           <a href={link} target="_blank" rel="noopener noreferrer">
             {title}
@@ -59,9 +59,9 @@ export class Post extends Component<Props, State> {
         </div>
         <div className="footer">
           <div className="footer-bottom">
-            <div className="datetime">
+            <time className="datetime">
               <FaCalendarTimes /> {datetime}
-            </div>
+            </time>
             <div className="views">
               <FaEye /> {clicks_count}
             </div>
@@ -73,7 +73,7 @@ export class Post extends Component<Props, State> {
             </div>
           </div>
         </div>
-      </div>
+      </aside>
     );
   }
 }
