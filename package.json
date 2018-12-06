@@ -44,6 +44,7 @@
   "devDependencies": {
     "@types/redux-devtools": "^3.0.44",
     "flow-bin": "^0.87.0",
+    "prettier": "^1.15.3",
     "redux-devtools": "^3.4.2"
   }
 }

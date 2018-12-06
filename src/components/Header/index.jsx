@@ -13,8 +13,7 @@ class HeaderComponent extends Component {
 
     return (
       <header className="main-header">
-        <div className="logo" />
-        <div>Новости</div>
+        <span className="logo" />
         <nav className="pages">
           <ReactPaginate
             previousLabel={<FaLongArrowAltLeft size={16} />}
