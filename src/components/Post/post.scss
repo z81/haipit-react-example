@@ -41,6 +41,10 @@
     color: var(--post-content-color);
     padding: 1.2rem;
     line-height: 1.32em;
+
+    pre {
+      overflow: hidden;
+    }
   }
 
   .footer {
@@ -71,7 +75,7 @@
         margin-right: 1.5rem;
         font-size: 0.9em;
 
-        > svg {
+        >svg {
           padding-right: 0.4rem;
         }
       }
