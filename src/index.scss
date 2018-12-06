@@ -1,3 +1,9 @@
+:root {
+  --main-color: hsl(210, 29%, 16%);
+  --accent-color: hsl(210, 29%, 22%);
+  --font-color: hsl(204, 8%, 98%);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,5 +13,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background: #40435c;
+  background: var(--main-color);
 }
