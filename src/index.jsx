@@ -10,14 +10,15 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import reducers from "./store/reducers";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./smoothImageLoader";
 
 const store = createStore(
   reducers,
   applyMiddleware(
     thunk.withExtraArgument({
-      API_PATH: "https://api.haipit.news/api/v2/"
-    })
-  )
+      API_PATH: "https://api.haipit.news/api/v2/",
+    }),
+  ),
 );
 
 ReactDOM.render(
@@ -28,7 +29,7 @@ ReactDOM.render(
       </div>
     </Router>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -17,7 +17,12 @@ const initialState = {
   currentPage: 1
 };
 
-const setDefaultImageHeight = (text: string) => text.replace(/<img /gmi, img => `${img} height="${window.screen.width / 6}px" `)
+const setDefaultImageHeight = (text: string) => {
+  const imgHeight = window.screen.width / 6;
+
+  const clb = img => `${img} height="${imgHeight}px" onload="imgFixLoader(this)" `;
+  return text.replace(/<img /gmi, clb);
+}
 
 export default function reduce(state = initialState, action = {}) {
   switch (action.type) {
