@@ -5,21 +5,12 @@ import { Post } from "../Post";
 import "./posts.scss";
 
 export class PostList extends React.Component {
-  //   componentDidMount() {
-  //     const { routeParams, currentPage } = this.props;
+  componentDidMount() {
+    const { routeParams, currentPage } = this.props;
 
-  //     const pageId = routeParams.id || currentPage;
+    const pageId = routeParams.id || currentPage;
 
-  //     this.props.goToPage(pageId);
-  //   }
-
-  componentWillReceiveProps({ routeParams }) {
-    if (
-      this.props.routeParams.id !== routeParams.id ||
-      this.props.posts.length === 0
-    ) {
-      this.props.goToPage(+routeParams.id);
-    }
+    this.props.goToPage(pageId);
   }
 
   renderPosts() {
