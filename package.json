@@ -42,6 +42,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/prettier": "^1.15.2",
     "@types/redux-devtools": "^3.0.44",
     "flow-bin": "^0.87.0",
     "prettier": "^1.15.3",

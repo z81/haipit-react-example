@@ -1,4 +1,9 @@
+FROM node:alpine as builder
+COPY . /app
+WORKDIR /app
+RUN yarn --production
+RUN yarn build
+
 FROM nginx:alpine
-# RUN npm run build
-COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./build/ /usr/share/nginx/html
+COPY  --from=builder /app/nginx.conf /etc/nginx/nginx.conf
+COPY  --from=builder /app/build/ /usr/share/nginx/html
