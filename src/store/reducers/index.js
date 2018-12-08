@@ -14,7 +14,7 @@ const loadingPosts = [1, 2, 3, 4, 5, 6].map(id => ({
 
 const initialState = {
   posts: [],
-  currentPage: 1
+  currentPage: 0
 };
 
 const setDefaultImageHeight = (text: string) => {

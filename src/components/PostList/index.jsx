@@ -5,12 +5,18 @@ import { Post } from "../Post";
 import "./posts.scss";
 
 export class PostList extends React.Component {
-  componentDidMount() {
-    const { routeParams, currentPage } = this.props;
+  isLoading = false;
 
+  async componentWillUpdate(prevProps, prevState, snapshot) {
+    const { routeParams, currentPage, goToPage, posts } = this.props;
     const pageId = routeParams.id || currentPage;
+    const prevPageId = prevProps.currentPage;
 
-    this.props.goToPage(pageId);
+    if (!this.isLoading && pageId !== prevPageId) {
+      this.isLoading = true;
+      await goToPage(pageId);
+      this.isLoading = false;
+    }
   }
 
   renderPosts() {
