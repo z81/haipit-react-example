@@ -4,37 +4,39 @@ import * as types from '../actionTypes';
 
 
 export function goToPage(page: number) {
-    return async (dispatch, getState, {
-        API_PATH
-    }) => {
-        try {
-            dispatch({
-                type: types.SET_POSTS_LOADER
-            });
+  return async (dispatch, getState, {
+    API_PATH
+  }: {
+    API_PATH: string
+  }) => {
+    try {
+      dispatch({
+        type: types.SET_POSTS_LOADER
+      });
 
 
 
-            const req = await fetch(`${API_PATH}news?page=${page}`);
-            const {
-                data: posts,
-                total: totalPages,
-                per_page: newsPerPage,
-                current_page: currentPage,
-                last_page: lastPage
-            } = await req.json();
+      const req = await fetch(`${API_PATH}news?page=${page}`);
+      const {
+        data: posts,
+        total: totalPages,
+        per_page: newsPerPage,
+        current_page: currentPage,
+        last_page: lastPage
+      } = await req.json();
 
-            dispatch({
-                type: types.SET_POSTS,
-                payload: {
-                    posts,
-                    totalPages,
-                    currentPage,
-                    newsPerPage,
-                    lastPage
-                }
-            });
-        } catch (error) {
-            console.error(error);
+      dispatch({
+        type: types.SET_POSTS,
+        payload: {
+          posts,
+          totalPages,
+          currentPage,
+          newsPerPage,
+          lastPage
         }
-    };
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }

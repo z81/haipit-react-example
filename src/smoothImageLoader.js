@@ -1,13 +1,13 @@
-const loadedImages = [];
+const loadedImages: HTMLImageElement[] = [];
 let lastImageLoadTime = 0;
 
-const loadedImagSetAuthoHeight = () => {
+const loadedImagSetAutoHeight = () => {
   loadedImages.forEach(m => {
     m.style.height = "auto";
   });
 };
 
-window.imgFixLoader = element => {
+window.imgFixLoader = (element: HTMLImageElement) => {
   loadedImages.push(element);
   if (Date.now() - lastImageLoadTime > 500) {
     loadedImages.forEach(m => {
@@ -16,5 +16,5 @@ window.imgFixLoader = element => {
   }
 
   lastImageLoadTime = +Date.now();
-  setTimeout(loadedImagSetAuthoHeight, 500);
+  setTimeout(loadedImagSetAutoHeight, 500);
 };

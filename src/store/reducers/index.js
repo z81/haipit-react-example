@@ -1,18 +1,20 @@
 // @flow
 
-import * as types from '../actionTypes';
+import {
+  Action
+} from '../actionTypes';
 
-declare interface initialState {
-  posts: mixed[];
-  currentPage: number;
-}
+type State = {+posts: Array < {+id: number
+  } > ,
+  +currentPage: number
+};
 
 const loadingPosts = [1, 2, 3, 4, 5, 6].map(id => ({
   id,
   isLoading: true
-}))
+}));
 
-const initialState = {
+const initialState: State = {
   posts: [],
   currentPage: 0
 };
@@ -20,13 +22,13 @@ const initialState = {
 const setDefaultImageHeight = (text: string) => {
   const imgHeight = window.screen.width / 6;
 
-  const clb = img => `${img} height="${imgHeight}px" onload="imgFixLoader(this)" `;
-  return text.replace(/<img /gmi, clb);
-}
+  const clb = (img) => `${img} height="${imgHeight}px" onload="imgFixLoader(this)" `;
+  return text.replace(/<img /gim, clb);
+};
 
-export default function reduce(state = initialState, action = {}) {
+export default function reducer(state: State = initialState, action: Action): State {
   switch (action.type) {
-    case types.SET_POSTS:
+    case "SET_POSTS":
       return {
         ...state,
         ...action.payload,
@@ -38,11 +40,11 @@ export default function reduce(state = initialState, action = {}) {
           description: setDefaultImageHeight(description || '')
         }))
       };
-    case types.SET_POSTS_LOADER:
+    case "SET_POSTS_LOADER":
       return {
         ...state,
         posts: loadingPosts
-      }
+      };
     default:
       return state;
   }

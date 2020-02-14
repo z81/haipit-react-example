@@ -1,2 +1,18 @@
-export const SET_POSTS = "SET_POSTS";
-export const SET_POSTS_LOADER = "SET_POSTS_LOADER";
+type setPostsLoaderAction = {
+  type: "SET_POSTS_LOADER",
+  foo: number
+};
+type setPostsAction = {
+  type: "SET_POSTS",
+  payload: {
+    posts: [],
+    totalPages: number,
+    currentPage: number,
+    newsPerPage: number,
+    lastPage: number
+  }
+};
+
+export type Action = |
+  setPostsAction |
+  setPostsLoaderAction;

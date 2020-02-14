@@ -9,7 +9,7 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import reducers from "./store/reducers";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./smoothImageLoader";
 
 const store = createStore(
@@ -36,4 +36,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 
-serviceWorker.unregister();
+// serviceWorker.unregister();
